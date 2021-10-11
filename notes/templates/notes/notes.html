@@ -10,12 +10,14 @@ justify-content: center;
     }
     .card{
         width: 200px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 </style>
 {% endblock css %}
 {% block body %}
 <form action="/save" method="post">
     {% csrf_token %}
+
 
     <div class="mb-3 container">
         <label for="exampleFormControlInput1" class="form-label">Title</label>
@@ -24,7 +26,7 @@ justify-content: center;
     <div class="mb-3 container">
         <label for="exampleFormControlTextarea1" class="form-label">Note</label>
         <textarea class="form-control" placeholder="Note..." name="note" id="exampleFormControlTextarea1" rows="7"></textarea>
-        <button type="submit" class="btn btn-warning mt-4">Add</button>
+        <button type="submit" class="btn btn-warning mt-4">Add Notes</button>
     </div>
 </form>
 

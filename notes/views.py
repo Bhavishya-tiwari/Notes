@@ -30,7 +30,6 @@ def dell(request, inn):
     ps = Notes.objects.filter(Admin_Email = request.user.email)
     for p in ps:
         if p.fno == inn:
-            print(p.Title)
             p.delete()
     return redirect('Home')
 
@@ -60,7 +59,8 @@ def save(request):
         auth_us = request.user
         t = datetime.now()
         n =  Notes(Title = title, Disc=note, Admin_Name = auth,Admin_Username=auth_us,Admin_Email=e, Timestamp_Created=t  )
-        n.save()
+        if auth != "" and title != "":
+            n.save()
     return redirect('Home')
 
 
