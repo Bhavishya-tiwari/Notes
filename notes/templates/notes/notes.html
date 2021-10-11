@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    #ct{
+        width: 90vw;
+        display: flex;
+flex-wrap: wrap;
+justify-content: center;
+    }
+    .card{
+        width: 200px;
+    }
+</style>
+{% endblock css %}
+{% block body %}
+<form action="/save" method="post">
+    {% csrf_token %}
+
+    <div class="mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title...">
+    </div>
+    <div class="mb-3 container">
+        <label for="exampleFormControlTextarea1" class="form-label">Note</label>
+        <textarea class="form-control" placeholder="Note..." name="note" id="exampleFormControlTextarea1" rows="7"></textarea>
+        <button type="submit" class="btn btn-warning mt-4">Add</button>
+    </div>
+</form>
+
+<div id="ct">
+{% for pp in p %}
+    <div class="card m-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{pp.Title |slice:300}}</h5>
+          <p class="card-text">{{pp.Disc | slice:200}}</p>
+          <a href="/delete/{{pp.fno}}" class="btn btn-danger">Delete</a>
+          <a href="/read/{{pp.fno}}" class="btn btn-primary">Read more</a>
+        </div>
+
+    </div>
+{% endfor %}
+    
+     
+</div>
+
+
+
+
+
+{% endblock body %}
