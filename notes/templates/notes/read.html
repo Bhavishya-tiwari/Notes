@@ -2,16 +2,14 @@
 {% block body %}
 <div class="card container">
   <div class="card-header">
-{{p.Title}}
+<h4>Title - {{p.Title}} </h4>
     
   </div>
   <div class="card-body ">
-
+  Name - {{p.Admin_Name}} <br>
+Time - {{p.Timestamp_Created |slice:16}}
     <h5 class="card-title"></h5>
-    <p class="card-text">With suppor
-    
-    
-    ting text below as a natural lead-in to additional content.</p>
+    <p class="card-text">{{p.Disc}}</p>
     <a href="/delete/{{p.fno}}" class="btn btn-danger">Delete</a>
   </div>
 </div>
