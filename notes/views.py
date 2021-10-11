@@ -11,20 +11,22 @@ from .models import Notes
 
 
 def Home(request):
+    return render(request, 'notes/home.html')
+
+    
+
+
+    
+
+
+def notes(request):
     if(request.user.is_authenticated):
 
         post = Notes.objects.filter(Admin_Email = request.user.email)
 
 
         return render(request, 'notes/notes.html', {"p":post})
-    
-    return render(request, 'notes/home.html')
-
-
-    
-
-def Pass(request):
-    return render(request, 'notes/pass.html')
+    return redirect('Home')
 
 def dell(request, inn):
     ps = Notes.objects.filter(Admin_Email = request.user.email)

@@ -1,14 +1,16 @@
-{% extends 'base.html' %}
-
-   {% block upper_js %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-  
-    {% endblock upper_js %}
-    {% block css %}
-    <style>
+    <title>Document</title>
+</head>
+<style>
  *{
     margin: 0;
     padding: 0;
@@ -26,9 +28,6 @@
     justify-content:right;
     
 }
-.quotes{
-    margin-top: 0px;
-}
 .h1-col1{
     margin:20px;
    
@@ -44,8 +43,6 @@
 }
 .col1-heading{
     display: flex;
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 .col2img img{
@@ -64,15 +61,8 @@
 
   }   
 </style>
-
-
-    
-    {% endblock css %}
- 
-
-{% block body %}
-
- <div class="total-home">
+<body>
+    <div class="total-home">
         <div class="box-home">
 <div class="col1">
     <div class="col1-heading">
@@ -80,11 +70,11 @@
             <span class="icon-notes" style='font-size:40px;'>&#9998;</span>  
         </div>
         <div class="h1-col1">
-            <h1  style="color: rgb(241, 207, 53); font-size: 70px; padding-bottom: 0;"  > <b> Create Notes</b></h1>
+            <h1 >Create Notes</h1>
         </div>
         
     </div>
- <div class="quotes"  style=" font-family: 'Italianno', cursive; font-size: 34px; padding-top: 0; ">
+ <div class="quotes" style=" font-family: 'Italianno', cursive; font-size: 27px; ">
 
 
 <br>
@@ -94,8 +84,7 @@
 Most of my friends who are put on that diet have very pleasant careers.” 
 <br>~ Ray Bradbury
 </div>
-<hr>
-<h2 style="color: rgb(241, 98, 129);"> - Login To create notes </h2>
+
 
 </div>
 <div class="col2">
@@ -106,6 +95,5 @@ Most of my friends who are put on that diet have very pleasant careers.”
 </div>
         </div>
     </div>
-
-
-{% endblock body %}
+</body>
+</html>

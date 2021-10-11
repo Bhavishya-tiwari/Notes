@@ -11,6 +11,7 @@ justify-content: center;
     .card{
         width: 200px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        
     }
 </style>
 {% endblock css %}
@@ -34,7 +35,7 @@ justify-content: center;
 {% for pp in p %}
     <div class="card m-3" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">{{pp.Title |slice:300}}</h5>
+          <h5 class="card-title">Title - {{pp.Title |slice:300}}</h5>
           <p class="card-text">{{pp.Disc | slice:200}}</p>
           <a href="/delete/{{pp.fno}}" class="btn btn-danger">Delete</a>
           <a href="/read/{{pp.fno}}" class="btn btn-primary">Read more</a>

@@ -6,6 +6,7 @@ from notes import views
 urlpatterns = [
     path('', views.Home, name='Home'),
     path('logout', views.hlogout, name='notes'),
+    path('notes', views.notes, name='notes'),
     path('save', views.save, name='notes'),
     path('delete/<int:inn>', views.dell, name='notes'),
     path('read/<int:innn>', views.read, name='notes'),
